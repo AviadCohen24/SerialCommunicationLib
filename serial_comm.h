@@ -53,10 +53,12 @@ extern "C" {
     bool list_serial_ports(uint64_t handle);
 
     // Accepts handle returned by open_serial_port_scan_object
-    // Continue...
+    // Returns the number of serial ports available after calling list_serial_ports.
     int32_t get_amount_available_ports(uint64_t handle);
 
-    void close_serial_port_scan_object( /* Continue */);
+    // Accepts the handle returned by open_serial_port_scan_object
+    // Cleans up resources allocated during the scan operation.
+    void close_serial_port_scan_object(uint64_t handle);
 }
 
 #endif // SERIAL_COMM_H
