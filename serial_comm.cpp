@@ -151,4 +151,24 @@ uint64_t list_serial_ports() {
     return ports;
 }
 
-int32_t get_amount_available_ports(uint64_t handle);
+int32_t get_amount_available_ports(uint64_t handle) {
+    // Validates the handle
+    if (handle == 0) return 0; // Error or invalid handle, return 0 ports available.
+
+    // Casts the handle back to the ScanResult structure
+    ScanResult* scanResult = reinterpret_cast<ScanResult*>(handle);
+
+    // Returns the count of available ports found during the scan
+    return static_cast<int32_t>(scanResult->available_ports.size());
+}
+
+void close_serial_port_scan_object(uint64_t handle) {
+    // Validates the handle
+    if (handle == 0) return; // If handle is 0, no operation is needed.
+
+    // Casts the handle back to the ScanResult structure
+    ScanResult* scanResult = reinterpret_cast<ScanResult*>(handle);
+
+    // Cleans up the allocated ScanResult object.
+    delete scanResult;
+}
