@@ -1,3 +1,6 @@
+# WIP
+Project outline and system design is completed, implementation requires additional care to the "list📃 serial ports" functionality which isn't complete yet.
+
 # SerialCommunicationLib
 
 SerialCommunicationLib is a comprehensive and easy-to-use C++ library designed to facilitate serial port communication across various platforms. Leveraging the power of Boost.Asio for asynchronous I/O, this library offers developers a straightforward approach to interfacing with hardware devices. Whether you're building applications that require communication with serial devices or developing embedded systems, SerialCommunicationLib provides the essential tools for opening, connecting, reading from, and writing to serial ports.
